@@ -2,4 +2,5 @@ CC = gcc
 CFLAGS = -Wall -g
 
 main: main.c 
-  ${CC} 
+  ${CC} ${CFLAGS} -o $@ $^
+  
