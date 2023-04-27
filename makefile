@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -g
 
-main: main.c 
+main: src/main.c 
   ${CC} ${CFLAGS} -o $@ $^
   
