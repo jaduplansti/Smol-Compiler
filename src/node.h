@@ -6,8 +6,8 @@ typedef struct {
   void *condition;
 } conditional_node;
 
-typedef struct {
+typedef struct expr_struct {
   
-} expr;
+} binary_expr;
 root_node *new_node();
 conditional_node *new_con_node();
