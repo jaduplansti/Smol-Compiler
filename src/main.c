@@ -5,7 +5,7 @@ FILE *src;
 
 int main(int argc, char **argv) {
   if(argc < 2) {
-    fprintf(stderr,"No Source File Specified");
+    fprintf(stderr,"No Source File Specified\n");
     return 1;
   }
   src = fopen(argv[1], "r");
