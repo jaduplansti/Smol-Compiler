@@ -1,3 +1,2 @@
 # c-plus-compiler
-
-A C+ Compiler
+A Small Compiler For The C+ Language
