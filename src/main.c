@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
 
   for(size_t argc_i = 1 argc_i < argc; argc_i++) { /* Loops Over Argc */
     for(size_t argc_c = 0; argc_c < strlen(argc[argc_i]); argc_c++) { /* Loops Over Characters In Argc */
-      if(argc[argc_i][argc_c] == '-') { /* If Argc Character Is '-' /
+      if(argc[argc_i][argc_c] == '-') { /* If Argc Character Is '-' */
         switch(argc[argc_i][++argc_c]) {
           case 's':
             /* Insert Code Here */
