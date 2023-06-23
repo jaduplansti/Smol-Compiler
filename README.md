@@ -1,2 +1,3 @@
-# c-plus-compiler
-A Small Compiler For The C+ Language
+# Smol Compiler
+> Just Another Compiler
+You Can Compile By Running `make` and hope it works
