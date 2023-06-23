@@ -1,7 +1,4 @@
-typedef struct {
-  char *string;
-  enum {type_id, type_int} type;
-} token_struct;
+#include "lexer.h"
 
 typedef struct {
   void *node;
