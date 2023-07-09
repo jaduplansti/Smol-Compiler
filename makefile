@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -g
 
-g+: src/main.c src/node.c src/lexer.c
+g+: src/main.c src/lexer/lexer.c
 	${CC} ${CFLAGS} -o $@ $^
   
