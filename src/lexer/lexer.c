@@ -4,7 +4,8 @@
 #include <string.h>
 #include "lexer.h"
 
-/* TODO: add operator stack */
+/* TODO: add operator stack 
+   add push and pop methods */
 extern FILE *src;
 static char keywords[][] = { /* lookup table for keywords */
     "auto", "double", "int", "struct",
