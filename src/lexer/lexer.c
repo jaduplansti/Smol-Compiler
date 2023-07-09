@@ -5,15 +5,27 @@
 #include "lexer.h"
 
 extern FILE *src;
-/* int char void*/
-static char keywords[][] = {
-    
+static char keywords[][] = { /* lookup table for keywords */
+    "auto", "double", "int", "struct",
+    "break", "else", "long", "switch",
+    "case", "enum", "register", "typedef",
+    "char", "extern", "return", "union",
+    "continue", "for", "signed", "void",
+    "do", "if", "static", "while",
+    "default", "goto", "sizeof", "volatile",
+    "const", "float", "short", "unsigned"
 };
-
 const size_t KEYWORDS_SIZE = sizeof(keywords) / sizeof(*keywords); /* size of 2d array of keywords */
 
 type_t check_type(char *str) {
-    
+    for(size_t i = 0; i < KEYWORDS_SIZE; i++) {
+        if(strcmp(str, keywords[i]) == 0) return type_key;
+    }
+
+    if(isalpha(str[0])) return type_ident;
+    else if(isdigit(str[0])) return type_int;
+    else if(str[0] == '-' && isdigit(str[1])) return type_int;
+    /* else if(str[0] == ';') */
 }
 
 char *get_str() {
@@ -58,7 +70,10 @@ token_t *get_token() {
     char *str = get_str();
     
     /* if(str == NULL) */
+    
     token_t *token = new_token();
     token->str = str;
-    /* token->type = */
+    token->type = check_type(token->str);
+
+    return token;
 }
