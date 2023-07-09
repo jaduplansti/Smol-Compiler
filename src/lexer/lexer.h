@@ -8,4 +8,4 @@ typedef struct { /* token structure */
 token_t *new_token();
 token_t *get_token();
 char *get_str();
-type_t check_type();
+type_t check_type(char *str);

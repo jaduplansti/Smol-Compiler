@@ -7,7 +7,7 @@
 /* TODO: add operator stack 
    add push and pop methods */
 extern FILE *src;
-static char keywords[][] = { /* lookup table for keywords */
+char keywords[32][10] = { /* lookup table for keywords */
     "auto", "double", "int", "struct",
     "break", "else", "long", "switch",
     "case", "enum", "register", "typedef",
@@ -36,7 +36,7 @@ char *get_str() {
     size_t i = 0; /* index of string */
     char *str;
 
-    for(char ch = fgetc(src);; ch = fgetc(src)) { /* loops until EOF or '\n' is found */
+    for(int ch = fgetc(src);; ch = fgetc(src)) { /* loops until EOF or '\n' is found */
         if(ch == EOF || ch == '\n') break;
         len++;   
     }
@@ -48,16 +48,16 @@ char *get_str() {
     
     str = calloc(len, sizeof(char)); /* allocates memory for string*/
     if(str == NULL) { /* checks if memory allocation for string failed */
-        fprintf(stderr, "./lexer: failed to allocate memory of %d for str\n", len);
+        fprintf(stderr, "./lexer: failed to allocate memory of %lu for str\n", len);
         return NULL;
     }
 
-    for(char ch = fgetc(src);; ch = fgetc(src)) { 
+    for(int ch = fgetc(src);; ch = fgetc(src)) { 
         if(ch == EOF || ch == '\n') break;
         str[i++] = ch; /* appends character to str */
     }
 
-    str[i] = '\0' /* null terminates the string */
+    str[i] = '\0'; /* null terminates the string */
     return str;
 }
 
